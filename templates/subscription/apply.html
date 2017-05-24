@@ -1,0 +1,100 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>فرم اشتراک ماهنامه بازی نما</title>
+    <style>
+        @font-face {
+            font-family: 'myFont';
+            src: url('{% static 'fonts/subscription/IRANSansWeb.eot' %}');
+            src: url('{% static 'fonts/subscription/IRANSansWeb.eot' %}?#iefix') format('embedded-opentype'),
+            url('{% static 'fonts/subscription/IRANSansWeb.woff' %}') format('woff'),
+            url('{% static 'fonts/subscription/IRANSansWeb.ttf' %}') format('truetype');
+        }
+        body{margin: 0;direction: rtl; font-family: myFont;font-size: 14px;background: #424242;}.form{width: 95%;max-width: 950px;margin: 0 auto;}.form-control{float: left;height: 36px;border: 1px solid #ccc;width: 65%;background: #f1f1f1;border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;padding: 1px 5px;}.form-group{margin: 1em auto;min-height: 40px;}  .form-body{padding: 1em;}.form-body label{color:#eee;}  .form-title h3{text-align: center;}.form-title{background: #212121; color: #ffcb05;padding: 0.5em 1em;}  .form-btn{background: #ffcb05;padding: 0.5em 1em;width: 60%; margin: 0 auto;display: block;font-family: myFont;border: 1px solid #ffcb05;font-weight: bold;font-size: 1em;}input, .form-select{font-family: myFont;}.form-select{height: 42px;width: 66.5%;}.form-area{min-height: 100px;resize: none;}
+        .form-error{text-align:center; color:#FF6B00}
+    </style>
+</head>
+<body>
+    <div class="form-title">
+        <h3>فرم اشتراک ماهنامه بازی نما</h3>
+    </div>
+
+    <div class="form-body">
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div class="form-error">
+                        {{ error|escape }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <div class="form-error">
+                    {{ error|escape }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <div class="form-body">
+        <form class="form" name="subsForm" method="post" action="">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>نام</label>
+                <input type="text" name="first_name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>نام خانوادگی</label>
+                <input type="text" name="last_name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>سن</label>
+                <input type="number" name="age" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>تحصیلات</label>
+                <input type="text" name="education" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>کدپستی</label>
+                <input type="tel" name="postal_code" class="form-control" >
+            </div>
+            <div class="form-group">
+                <label>تلفن</label>
+                <input type="tel" name="phone_number" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>تلفن همراه</label>
+                <input type="tel" name="mobile_number" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>پست الکترونیک</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group" style="min-height: 105px;">
+                <label>نشانی پستی</label>
+                <textarea name="address" class="form-control form-area"></textarea>
+            </div>
+            <div class="form-group">
+                <label>نوع اشتراک</label>
+                <select name="subscription_type" class="form-control form-select" required>
+                    {% for k, v in sub_types %}
+                        <option value="{{ k }}">{{ v }}</option>
+                    {% endfor %}
+                    <!--<option selected value="1" label="شش شماره + پست سفارشی = 30000 تومان"  ></option>-->
+                    <!--<option value="2" label="شش شماره + DVD + پست سفارشی = 42000 تومان"></option>-->
+                    <!--<option value="3" label="دوازده شماره + پست سفارشی = 60000 تومان" ></option>-->
+                    <!--<option value="4" label="دوازده شماره + DVD + پست سفارشی = 80000 تومان"></option>-->
+                </select>
+            </div>
+            <div class="form-group" style="margin-top: 3em;">
+                <input type="submit" class="form-btn" value="اشتراک">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

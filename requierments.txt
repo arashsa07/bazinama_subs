@@ -1,0 +1,33 @@
+
+# Needed for django
+Django==1.8
+requests
+mysqlclient
+
+Pillow
+
+djangorestframework==3.4.5
+markdown == 2.6.4
+
+
+# Needed for payments
+zeep
+pytz
+oauth2client
+pycrypto == 2.6.1
+
+
+# Needed for authentication
+djangorestframework-jwt == 1.8.0
+
+
+# Third party apps
+django-material == 0.8.0
+django-import-export >= 0.3.1
+
+
+# Others
+appdirs==1.4.3
+packaging==16.8
+pyparsing==2.2.0
+six==1.10.0

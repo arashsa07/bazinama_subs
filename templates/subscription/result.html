@@ -1,0 +1,45 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>فرم اشتراک ماهنامه بازی نما</title>
+    <style>
+        @font-face {
+            font-family: 'myFont';
+            src: url('{% static 'fonts/subscription/IRANSansWeb.eot' %}');
+            src: url('{% static 'fonts/subscription/IRANSansWeb.eot' %}?#iefix') format('embedded-opentype'),
+            url('{% static 'fonts/subscription/IRANSansWeb.woff' %}') format('woff'),
+            url('{% static 'fonts/subscription/IRANSansWeb.ttf' %}') format('truetype');
+        }
+        body{margin: 0;direction: rtl; font-family: myFont;font-size: 14px;background: #424242;}.form-body{padding: 1em;}.form-body label{color:#eee;}  .form-title h3{text-align: center;}.form-title{background: #212121; color: #ffcb05;padding: 0.5em 1em;}input, .form-select{font-family: myFont;}  .alert{text-align: center;margin: 2em auto 1em auto;font-size: 1.2em;color: #f3f3f3;max-width: 500px;padding: 0.5em;}.alert-success{background: #81b742;}.alert-error{background: #ff6055;}
+    </style>
+</head>
+
+<body>
+<div class="form-title">
+    <h3>اشتراک در مجله بازی نما</h3>
+</div>
+<div class="form-body">
+    {% if status %}
+    <!--success-->
+        <div class=" alert alert-success">
+            <p>پرداخت موفقیت آمیز بود.</p>
+            <p>
+                <span>کد رهگیری : </span><span>{{ invoice_number }}</span>
+            </p>
+        </div>
+
+    {% else %}
+    <!--error-->
+        <div class="alert alert-error">
+            <p>پرداخت موفقیت آمیز نبود. </p>
+            <p>لطفا دوباره تلاش کنید.</p>
+        </div>
+    {% endif %}
+
+</div>
+</body>
+</html>
