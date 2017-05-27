@@ -4,7 +4,6 @@ local_config.py
 .project
 .pydevproject
 /uploads
-/static
 **/*.pyc
 .idea
 /SYMLINKS
