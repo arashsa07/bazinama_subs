@@ -3,11 +3,10 @@ from django.contrib import admin
 
 urlpatterns = [
     # Examples:
-    # url(r'^$', 'bazinama_subscription.views.home', name='home'),
+    # url(r'^$', 'bazinama_subs.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-
-    url(r'subscription/', include('subscription.urls')),
     url(r'^payment/', include('payments.urls')),
+    url(r'', include('subscription.urls')),
 ]
