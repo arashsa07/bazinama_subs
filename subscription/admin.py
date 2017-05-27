@@ -4,9 +4,9 @@ from .models import Subscription
 
 
 class SubscriptionAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name', 'age', 'education', 'postal_code', 'phone_number', 'mobile_number',
+    list_display = ['first_name', 'last_name', 'birthday', 'education', 'postal_code', 'phone_number', 'mobile_number',
                     'email', 'address', 'subscription_type', 'is_paid', 'paid_time']
-    readonly_fields = ['created_time', 'first_name', 'last_name', 'age', 'education', 'postal_code', 'phone_number',
+    readonly_fields = ['created_time', 'first_name', 'last_name', 'birthday', 'education', 'postal_code', 'phone_number',
                        'mobile_number', 'email', 'address', 'subscription_type', 'subscription_type', 'payment',
                        'is_paid', 'paid_time']
     list_filter = ('is_paid', 'subscription_type', )
