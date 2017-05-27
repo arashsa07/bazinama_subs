@@ -7,8 +7,8 @@ from payments.models import Payment, Gateway
 # Subscription Apply ==================================================================================================
 def subscription_apply(request):
 
-    sub_amounts = {'1': 30000,
-                   '2': 42000,
+    sub_amounts = {'1': 3103431,
+                   '2': 200,
                    '3': 60000,
                    '4': 80000}
 

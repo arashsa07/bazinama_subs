@@ -109,5 +109,5 @@ STATICFILES_DIRS = [
 
 
 PAYMENT = {
-    'project_name': 'bazinamasub'
+    'project_name': 'bazaar'
 }
