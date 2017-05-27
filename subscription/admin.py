@@ -5,10 +5,11 @@ from .models import Subscription
 
 class SubscriptionAdmin(admin.ModelAdmin):
     list_display = ['first_name', 'last_name', 'age', 'education', 'postal_code', 'phone_number', 'mobile_number',
-                    'email', 'address', 'amount', 'is_paid', 'paid_time']
+                    'email', 'address', 'subscription_type', 'is_paid', 'paid_time']
     readonly_fields = ['created_time', 'first_name', 'last_name', 'age', 'education', 'postal_code', 'phone_number',
-                       'mobile_number', 'email', 'address', 'subscription_type', 'amount', 'payment', 'is_paid', 'paid_time']
-    list_filter = ('is_paid', 'amount', )
+                       'mobile_number', 'email', 'address', 'subscription_type', 'subscription_type', 'payment',
+                       'is_paid', 'paid_time']
+    list_filter = ('is_paid', 'subscription_type', )
     search_fields = ('first_name', 'last_name', 'phone_number', 'mobile_number', 'email')
     actions = None
 

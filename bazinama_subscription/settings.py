@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'o5$wncpys9sek^k67$*lee=mlvjhw23w+&oy$^o%62t0yz2a3r'
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sub.bazinamaplus.ir', ]
 
 
 # Application definition
@@ -109,5 +109,5 @@ STATICFILES_DIRS = [
 
 
 PAYMENT = {
-    'project_name': 'bazaar'
+    'project_name': 'bazinamasub'
 }

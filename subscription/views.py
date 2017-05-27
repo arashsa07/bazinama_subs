@@ -1,16 +1,12 @@
 from django.shortcuts import render, redirect
 
 from .forms import SubscriptionForm
+from .models import Subscription
 from payments.models import Payment, Gateway
 
 
 # Subscription Apply ==================================================================================================
 def subscription_apply(request):
-
-    sub_amounts = {'1': 3103431,
-                   '2': 200,
-                   '3': 60000,
-                   '4': 80000}
 
     sub_types = [('1', "شش شماره + پست سفارشی = 30000 تومان"),
                  ('2', "شش شماره + DVD + پست سفارشی = 42000 تومان"),
@@ -21,12 +17,11 @@ def subscription_apply(request):
         form = SubscriptionForm(request.POST)
 
         if form.is_valid():
-            amount = sub_amounts[str(form.cleaned_data['subscription_type'])]
+            amount = Subscription.SUBSCRIPTION_TYPES[form.cleaned_data['subscription_type']-1][1]
             new_sub = form.save(commit=False)
             gateway = Gateway.objects.first()
             gateway_id = {'id': gateway.id}
             payment = Payment.objects.create(amount=amount, gateway=gateway, response_type=2)
-            new_sub.amount = amount
             new_sub.payment = payment
             new_sub.save()
 

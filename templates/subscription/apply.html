@@ -16,6 +16,7 @@
         }
         body{margin: 0;direction: rtl; font-family: myFont;font-size: 14px;background: #424242;}.form{width: 95%;max-width: 950px;margin: 0 auto;}.form-control{float: left;height: 36px;border: 1px solid #ccc;width: 65%;background: #f1f1f1;border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;padding: 1px 5px;}.form-group{margin: 1em auto;min-height: 40px;}  .form-body{padding: 1em;}.form-body label{color:#eee;}  .form-title h3{text-align: center;}.form-title{background: #212121; color: #ffcb05;padding: 0.5em 1em;}  .form-btn{background: #ffcb05;padding: 0.5em 1em;width: 60%; margin: 0 auto;display: block;font-family: myFont;border: 1px solid #ffcb05;font-weight: bold;font-size: 1em;}input, .form-select{font-family: myFont;}.form-select{height: 42px;width: 66.5%;}.form-area{min-height: 100px;resize: none;}
         .form-error{text-align:center; color:#FF6B00}
+        .required{margin-right: 5px;color: #ffcb05;font-size: 1.2em;}
     </style>
 </head>
 <body>
@@ -68,11 +69,11 @@
                 <input type="tel" name="phone_number" class="form-control">
             </div>
             <div class="form-group">
-                <label>تلفن همراه</label>
+                <label>تلفن همراه</label><span class="required">*</span>
                 <input type="tel" name="mobile_number" class="form-control" required>
             </div>
             <div class="form-group">
-                <label>پست الکترونیک</label>
+                <label>پست الکترونیک</label><span class="required">*</span>
                 <input type="email" name="email" class="form-control" required>
             </div>
             <div class="form-group" style="min-height: 105px;">
