@@ -7,8 +7,6 @@ local_config.py
 **/*.pyc
 .idea
 /SYMLINKS
-**/migrations/*
-#service/migrations/*
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
