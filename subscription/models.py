@@ -17,9 +17,9 @@ class Subscription(models.Model):
 
     created_time = models.DateTimeField(_('Time'), auto_now_add=True)
     first_name = models.CharField(_('First Name'), max_length=255, blank=True)
-    last_name = models.CharField(_('First Name'), max_length=255, blank=True)
+    last_name = models.CharField(_('Last Name'), max_length=255, blank=True)
     birthday = models.CharField(_('Birthday'), max_length=100, blank=True, null=True)
-    education = models.CharField(_('First Name'), max_length=255, blank=True)
+    education = models.CharField(_('Education'), max_length=255, blank=True)
     postal_code = models.CharField(_('Postal Code'), max_length=20, blank=True)
     phone_number = models.CharField(_('Phone Number'), max_length=20, blank=True)
     mobile_number = models.CharField(_('Mobile Number'), max_length=20, validators=[
